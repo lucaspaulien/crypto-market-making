@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mmsim"
+version = "0.1.0"
+description = "Event-driven market-making backtester on Binance BTCUSDT / XRPUSDT perpetual top-of-book data: queue-position fill model, latency, Avellaneda-Stoikov (GLFT) quoting, order-book-imbalance alpha and an exact PnL attribution (spread capture, adverse selection, inventory, fees)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Lucas Paulien" }]
+keywords = ["market-making", "avellaneda-stoikov", "market-microstructure", "backtesting", "crypto", "quantitative-finance"]
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "numba>=0.58",
+]
+
+[project.urls]
+Repository = "https://github.com/lucaspaulien/crypto-market-making"
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.7"]
+dev = ["pytest>=7.4", "matplotlib>=3.7", "pyflakes>=3.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "tests"]
+testpaths = ["tests"]

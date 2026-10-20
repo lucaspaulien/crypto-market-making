@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+.DS_Store
+# Binance data: ~1.5 GB once converted, re-downloadable with scripts/download_data.py
+data/
